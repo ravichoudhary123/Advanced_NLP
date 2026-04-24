@@ -1,0 +1,46 @@
+ai_leaders:
+  - NVDA
+  - AMD
+  - MSFT
+  - GOOGL
+  - AMZN
+  - META
+  - AVGO
+  - ANET
+  - TSM
+  - MU
+
+adjacent_candidates:
+  networking:
+    - symbol: CIEN
+      peer_symbol: ANET
+      similarity: 0.72
+      ai_exposure: 0.55
+      ps_ratio: 2.1
+      peer_ps: 12.0
+    - symbol: SMCI
+      peer_symbol: NVDA
+      similarity: 0.78
+      ai_exposure: 0.74
+      ps_ratio: 2.5
+      peer_ps: 25.0
+  memory_and_storage:
+    - symbol: WDC
+      peer_symbol: MU
+      similarity: 0.69
+      ai_exposure: 0.45
+      ps_ratio: 1.1
+      peer_ps: 4.5
+    - symbol: STX
+      peer_symbol: MU
+      similarity: 0.65
+      ai_exposure: 0.42
+      ps_ratio: 1.5
+      peer_ps: 4.5
+  industrial_ai:
+    - symbol: ROCK
+      peer_symbol: ETN
+      similarity: 0.62
+      ai_exposure: 0.36
+      ps_ratio: 3.0
+      peer_ps: 4.8

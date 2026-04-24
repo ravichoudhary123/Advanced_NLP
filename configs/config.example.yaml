@@ -5,6 +5,7 @@ execution:
   mode: paper
   allow_live: false
   market_hours_only: true
+  orchestration_engine: native
 
 data:
   benchmark_symbols: ["SPY", "QQQ", "SOXX"]

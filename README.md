@@ -137,6 +137,14 @@ pytest -q
 - Add richer news stack (earnings transcript embeddings + event extraction).
 - Add data quality scoring and stale-feed detection alarms.
 
+## Why LangGraph was not hard-wired initially (and how to enable it now)
+- **Yes, LangGraph is open source (MIT licensed)**.
+- The initial MVP used a native orchestrator to keep dependencies minimal and preserve deterministic behavior in restricted environments.
+- This repo now supports both:
+  - `execution.orchestration_engine: native` (default)
+  - `execution.orchestration_engine: langgraph` (optional, requires `pip install -e .[agent]`)
+- The LangGraph path preserves the same cash-only risk gates before execution.
+
 ## Compliance/Safety reminders
 - Never enable margin or leverage in broker account settings.
 - Never short in this strategy profile.

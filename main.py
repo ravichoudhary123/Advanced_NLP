@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import pandas as pd
 
+from ai_trading_agent.agents.langgraph_orchestrator import LangGraphTradingOrchestrator
 from ai_trading_agent.agents.orchestrator import TradingOrchestrator
 from ai_trading_agent.broker.paper import PaperBroker
 from ai_trading_agent.config.loaders import load_config, load_watchlist
@@ -33,6 +34,8 @@ def main(config_path: str = "configs/config.example.yaml") -> None:
     candidates = build_candidate_df(watchlist)
 
     orchestrator = TradingOrchestrator(cfg, broker, market, news, logger)
+    if cfg.execution.orchestration_engine == "langgraph":
+        orchestrator = LangGraphTradingOrchestrator(cfg, broker, market, news, logger)
     result = orchestrator.run_cycle(leaders_universe, candidates)
     print("Top hidden gems:\n", result["hidden_gems"].head(5))
     print(f"Orders submitted: {len(result['orders'])}")

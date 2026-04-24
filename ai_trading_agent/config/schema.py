@@ -19,6 +19,7 @@ class ExecutionConfig(BaseModel):
     mode: str = "paper"  # paper or live
     allow_live: bool = False
     market_hours_only: bool = True
+    orchestration_engine: str = "native"  # native or langgraph
 
 
 class DataConfig(BaseModel):
